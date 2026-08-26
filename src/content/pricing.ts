@@ -1,0 +1,47 @@
+export const pricingTiers = [
+  {
+    name: "Five people",
+    price: "$0",
+    cadence: "forever",
+    description: "A complete private notebook for the people closest to you.",
+    features: [
+      "Up to five person pages",
+      "Unlimited private notes",
+      "The Catch and basic nudges",
+      "Full export",
+    ],
+    cta: "Start remembering",
+    href: "#start",
+    highlighted: false,
+  },
+  {
+    name: "Your circle",
+    price: "$8",
+    cadence: "per month",
+    description: "Room for every relationship you want to tend with care.",
+    features: [
+      "Unlimited person pages",
+      "The Catch, Nudge, and Sift",
+      "Cited suggestions from your notes",
+      "Person-level delete and export",
+    ],
+    cta: "Start remembering",
+    href: "#start",
+    highlighted: true,
+  },
+  {
+    name: "Together",
+    price: "$14",
+    cadence: "per month",
+    description: "A shared household archive with separate private spaces.",
+    features: [
+      "Two private member spaces",
+      "Optional shared people",
+      "Unlimited notes and nudges",
+      "Independent exports",
+    ],
+    cta: "Start remembering",
+    href: "#start",
+    highlighted: false,
+  },
+] as const;

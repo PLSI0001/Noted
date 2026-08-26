@@ -1,0 +1,171 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+
+  --color-portrait-ink: #08304c;
+  --color-nautical-teal: #084e72;
+  --color-graphite-body: #2c2c2c;
+  --color-slate-helper: #797979;
+  --color-charcoal-outline: #353535;
+  --color-ash-divider: #dedede;
+  --color-mist-hairline: #eeeeee;
+  --color-white-canvas: #ffffff;
+  --color-mint-wash: #d7ffe2;
+  --color-sky-wash: #e8f1ff;
+  --color-peach-wash: #ffebd6;
+
+  --text-display-1: clamp(3.5rem, 2.4rem + 4.6vw, 7rem);
+  --text-display-1--line-height: 0.95;
+  --text-display-1--letter-spacing: -0.058em;
+  --text-display-2: clamp(2.8rem, 2rem + 3.5vw, 5.7rem);
+  --text-display-2--line-height: 0.98;
+  --text-display-2--letter-spacing: -0.052em;
+  --text-h1: clamp(2.7rem, 2.1rem + 2.4vw, 4.75rem);
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -0.045em;
+  --text-h2: clamp(2.2rem, 1.8rem + 1.7vw, 3.65rem);
+  --text-h2--line-height: 1.04;
+  --text-h2--letter-spacing: -0.04em;
+  --text-h3: clamp(1.65rem, 1.45rem + 0.8vw, 2.4rem);
+  --text-h3--line-height: 1.08;
+  --text-h3--letter-spacing: -0.034em;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.5;
+  --text-body: 1rem;
+  --text-body--line-height: 1.55;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.45;
+  --text-meta: 0.6875rem;
+  --text-meta--line-height: 1.4;
+  --text-meta--letter-spacing: 0.12em;
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+
+  --shadow-paper: 0 0 0 1px oklab(0 0 0 / 0.06),
+    0 20px 20px -10px rgb(0 0 0 / 0.05),
+    0 10px 10px -5px rgb(0 0 0 / 0.03),
+    0 3px 3px -1.5px rgb(0 0 0 / 0.03);
+  --shadow-float: 0 16px 16px -8px rgb(0 0 0 / 0.03),
+    0 10px 10px -5px rgb(0 0 0 / 0.03),
+    0 5px 5px -2.5px rgb(0 0 0 / 0.03),
+    0 3px 3px -1.5px rgb(0 0 0 / 0.03),
+    0 2px 2px -1px rgb(0 0 0 / 0.03),
+    0 1px 1px -0.5px rgb(0 0 0 / 0.03);
+}
+
+:root {
+  --gradient-rainbow: linear-gradient(
+    90deg,
+    #26c0ff,
+    #e600c2 20%,
+    #ff4940 40%,
+    #ffa130 60%,
+    #ffc837 80%,
+    #00cc3d
+  );
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+    color: #08304c;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #ffffff;
+    font-family: var(--font-sans);
+  }
+
+  :where(h1, h2, h3) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  :where(p) {
+    text-wrap: pretty;
+  }
+
+  :where(section[id]) {
+    scroll-margin-top: 92px;
+  }
+
+  :focus-visible {
+    outline: 2px solid #084e72;
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background: #d7ffe2;
+    color: #08304c;
+  }
+}
+
+@layer components {
+  .paper-card {
+    border: 1px solid rgb(53 53 53 / 0.09);
+    background: #ffffff;
+    box-shadow: var(--shadow-paper);
+  }
+
+  .rainbow-text {
+    background: var(--gradient-rainbow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .rainbow-outline {
+    border: 1.5px solid transparent;
+    background:
+      linear-gradient(#ffffff, #ffffff) padding-box,
+      var(--gradient-rainbow) border-box;
+  }
+
+  .brand-swatch {
+    background: var(--gradient-rainbow);
+  }
+
+  .soft-hero-halo {
+    background: radial-gradient(circle, rgb(142 81 255 / 0.08) 0%, rgb(142 81 255 / 0.025) 44%, transparent 74%);
+  }
+
+  .image-hairline {
+    box-shadow: 0 0 0 1px rgb(53 53 53 / 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

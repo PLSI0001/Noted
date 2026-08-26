@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="noted-spectrum" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#26c0ff"/>
+      <stop offset=".2" stop-color="#e600c2"/>
+      <stop offset=".4" stop-color="#ff4940"/>
+      <stop offset=".6" stop-color="#ffa130"/>
+      <stop offset=".8" stop-color="#ffc837"/>
+      <stop offset="1" stop-color="#00cc3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#noted-spectrum)"/>
+  <path d="M19 45V19h7.5l11.3 17.2V19H45v26h-7.4L26.2 27.6V45H19Z" fill="#fff"/>
+</svg>
